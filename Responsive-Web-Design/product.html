@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>FreeCodeCamp Product Landing Project</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto&display=swap");
+
+      :root {
+        --background-color: #3d1011;
+        --font-color: hsl(24, 47%, 55%);
+        --background-color-alpha: rgba(61, 16, 17, 0.89);
+        background-color: var(--background-color-alpha);
+      }
+
+      #header {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        background-color: black;
+      }
+
+      #nav-bar {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #header-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
+
+      #name-img {
+        height: 64px;
+        background-color: ;
+      }
+
+      #nav-list {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--font-color);
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.5rem;
+        flex-grow: 1;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        color: var(--font-color);
+        margin-top: 128px;
+      }
+
+      .title {
+        font-family: "Julius Sans One", sans-serif;
+        text-align: center;
+        background-color: var(--background-color);
+        border-radius: 0.35rem;
+        padding: 0.75rem;
+        margin: 0.25rem;
+      }
+
+      #benefits {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+
+      #benefits-title {
+        flex: 1 0 90%;
+      }
+
+      #tier1,
+      #tier2,
+      #tier3 {
+        flex: 1 1 33%;
+      }
+
+      .emotes {
+        text-align: center;
+      }
+
+      .emotes img {
+        width: 28px;
+      }
+
+      .price {
+        text-align: center;
+        font-size: 2rem;
+      }
+      #purchase-form {
+        text-align: center;
+        flex: 1 0 90%;
+      }
+
+      #about {
+        display: grid;
+        grid-template-rows: 0.1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "title"
+          "about"
+          "schedule"
+          "video";
+      }
+
+      @media (min-width: 640px) {
+        #about {
+          grid-template-rows: 0.1fr 0.5fr 1fr 1fr;
+          grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+          grid-template-areas:
+            "title title title title"
+            ". about schedule ."
+            ". video video ."
+            ". video video .";
+        }
+        .emotes img {
+          width: 56px;
+        }
+      }
+
+      #about-title {
+        grid-area: title;
+      }
+
+      #bio {
+        text-align: left;
+        grid-area: about;
+      }
+
+      #email-form,
+      #schedule {
+        grid-area: schedule;
+      }
+
+      /* https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/ */
+      #video-embed {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        overflow: hidden;
+        grid-area: video;
+      }
+
+      #video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #form {
+        padding: 1rem;
+      }
+
+      form,
+      label,
+      input,
+      button {
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        border-radius: 0.35rem;
+      }
+
+      .purchase-button {
+        font-size: 1.1rem;
+        width: 80%;
+        padding: 0.75rem;
+        margin: 0.75rem;
+        background: var(--background-color);
+        color: inherit;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img id="header-img" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzy-avatar.png" alt="">
+        <img id="name-img" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyray-name.png" alt="">
+        <div id="nav-list">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#benefits">Benefits/Pricing</a>
+          <a class="nav-link" href="#purchase-form">Subscribe</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2 class="title" id="about-title">About Me</h2>
+        <article class="article" id="bio">
+          <h3 class="title">Biography</h3>
+          <p>I am a grandfather, gamer, network engineer, and Twitch streamer/moderator.</p>
+          <p>I have been gaming most of my life since the first PCs, arcade games, and consoles were released.</p>
+          <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li>First Console: Atari 2600</li>
+            <li>First PC Game: Lemonade Stand on Apple ][</li>
+            <li>First Arcade Game: Pong</li>
+          </ul>
+        </article>
+        <article class="article" id="schedule">
+          <h3 class="title">Schedule</h3>
+          <p>I currently stream on Saturday/Sunday starting at 12:00PM (noon) Central time.</p>
+        </article>
+        <div id="video-embed">
+          <iframe id="video" title="fuzzyray" src="https://player.twitch.tv/?video=66704042&parent=codepen.io&autoplay=false&muted=true&time=0h0m6s" 
+    width="854px" height="480px" frameborder="0" scrolling="no" allowfullscreen="true">
+          </iframe>
+          <!--
+          <iframe id="video" title="fuzzyray" src="https://player.twitch.tv/?channel=fuzzyray&parent=fuzzyray.tv&autoplay=false&muted=true" width="854px" height="480px" frameborder="0" scrolling="no" allowfullscreen="true">
+          -->
+          </iframe>
+        </div>
+      </section>
+      <section id="benefits">
+        <h2 class="title" id="benefits-title">Benefits</h2>
+        <article class="article" id="tier1">
+          <h3 class="title">Tier 1 Subscription</h3>
+          <p>Includes Ad-Free viewing, chatting during Sub-Only Mode, subscription tenure badges, and 2 emotes.</p>
+          <div class="emotes">
+            <img id="fuzzyrHeart" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrHeart.png" alt="fuzzyrHeart">
+            <img id="fuzzyrRIP" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrRIP.png" alt="fuzzyrRIP">
+          </div>
+          <p class="price">$4.99</p>
+        </article>
+        <article class="article" id="tier2">
+          <h3 class="title">Tier 2 Subscription</h3>
+          <p>Includes Ad-Free viewing, chatting during Sub-Only Mode, subscription tenure badges, and 3 emotes.</p>
+          <div class="emotes">
+            <img id="fuzzyrHeart" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrHeart.png" alt="fuzzyrHeart">
+            <img id="fuzzyrRIP" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrRIP.png" alt="fuzzyrRIP">
+            <img id="fuzzyrAyyy" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrAyyy.png" alt="fuzzyrAyyy">
+          </div>
+          <p class="price">$9.99</p>
+        </article>
+        <article class="article" id="tier3">
+          <h3 class="title" id="tier3">Tier 3 Subscription</h3>
+          <p>Includes Ad-Free viewing, chatting during Sub-Only Mode, subscription tenure badges, and 4 emotes.</p>
+          <div class="emotes">
+            <img id="fuzzyrHeart" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrHeart.png" alt="fuzzyrHeart">
+            <img id="fuzzyrRIP" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrRIP.png" alt="fuzzyrRIP">
+            <img id="fuzzyrAyyy" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrAyyy.png" alt="fuzzyrAyyy">
+            <img id="fuzzyrFacePalm" src="https://raw.githubusercontent.com/fuzzyray/FreeCodeCamp/master/assets/fuzzyrFacePalm.png" alt="fuzzyrFacePalm">
+          </div>
+          <p class="price">$24.99</p>
+        </article>
+        <form id="purchase-form" action="https://www.twitch.tv/subs/fuzzyray" method="get" target="_blank">
+          <h2 class="title">Subscribe</h2>
+          <button class="purchase-button" type="submit">Purchase subscription on Twitch</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

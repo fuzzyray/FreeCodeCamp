@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>FreeCodeCamp Survey Project</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Cantarell", "Fira Sans",
+          "Droid Sans", "Helvetica Neue", sans-serif;
+        font-size: 1rem;
+        color: white;
+        background-image: url(https://images.unsplash.com/photo-1531594896955-305cf81269f1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        text-align: center;
+      }
+
+      .container {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.5rem;
+        width: 100%;
+        max-width: 96%;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 640px) { 
+        .container {
+          max-width: 480px;
+        }
+      }
+
+      @media (min-width: 1024px) { 
+        .container {
+          max-width: 512px;
+        }
+      }
+
+      @media (min-width: 1440px) { 
+        .container {
+          max-width: 720px;
+        }
+      }
+
+      .form-container {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 3rem 1.5rem;
+      }
+
+      header {
+        padding: 2rem 0 2rem 0;
+        font-size: 1.4rem;
+      }
+
+      #description {
+        font-style: italic;
+      }
+
+      .input-grouping {
+        font-size: 1.2rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 0 0;
+      }
+
+      button,
+      label,
+      input,
+      select,
+      option,
+      textarea {
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        border-radius: 0.35rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="title">Video Game Survey</h1>
+        <p id="description">What video game platform and genres do you like the most?</p>
+      </header>
+
+      <!-- Survey form -->
+      <div class="form-container">
+        <form id="survey-form">
+          <div class="input-grouping">
+            <label id="name-label" for="name">Name</label>
+            <input id="name" type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-grouping">
+            <label id="email-label" for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-grouping">
+            <label id="number-label" for="age">Age</label>
+            <input id="number" type="number" min="13" max="120" placeholder="Enter your age">
+          </div>
+          <div class="input-grouping">
+            <p>Do you own a console?</p>
+            <label>
+              <input name="console" type="radio" value="yes" checked>Yes
+            </label>
+            <label>
+              <input name="console" type="radio" value="no">No
+            </label>
+          </div>
+          <div class="input-grouping">
+            <p>What is your preferred gaming platform?</p>
+            <select id="dropdown" name="platform">
+              <option value="none" disabled selected>Please select one</option>
+              <option value="pc">PC</option>
+              <option value="mac">Mac</option>
+              <option value="playstation">Playstation</option>
+              <option value="xbox">XBox</option>
+              <option value="nintendo">Nintendo</option>
+              <option value="mobile">Mobile</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="input-grouping">
+            <p>Which video game genres do you like the most?</p>
+            <label><input type="checkbox" value="action">Action</label>
+            <label><input type="checkbox" value="adventure">Adventure</label>
+            <label><input type="checkbox" value="battle-royale">Battle Royale</label>
+            <label><input type="checkbox" value="fighting">Fighting</label>
+            <label><input type="checkbox" value="open-world">Open World</label>
+            <label><input type="checkbox" value="platform">Platformer</label>
+            <label><input type="checkbox" value="puzzle">Puzzle</label>
+            <label><input type="checkbox" value="roguelike">Roguelike</label>
+            <label><input type="checkbox" value="rpg">RPG</label>
+            <label><input type="checkbox" value="shooter">Shooter</label>
+            <label><input type="checkbox" value="simulation">Simulation</label>
+            <label><input type="checkbox" value="sports">Sports</label>
+            <label><input type="checkbox" value="strategy">Strategy</label>
+            <label><input type="checkbox" value="other">Other (specify below)</label>
+          </div>
+          <div class="input-grouping">
+            <p>Additional Comments?</p>
+            <textarea name="comments" rows="5" placeholder="Enter your comments here ..."></textarea>
+          </div>
+          <div class="input-grouping">
+            <p>Thank you for filling out this survey!</p>
+            <button id="submit" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
