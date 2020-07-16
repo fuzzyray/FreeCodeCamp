@@ -1,2 +1,2 @@
 # FreeCodeCamp
-FreeCodeCamp Projects
+Assets used for FreeCodeCamp Projects
